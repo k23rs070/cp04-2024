@@ -212,6 +212,15 @@
             $("#remain").html("残り時間： " + rest);
             analog(rest);
          }
+
+         var t = 0;
+         if (etime % 10 === 0 && etime !== t) {
+            t = etime;
+            var audio = new Audio();
+            audio.src = "pin.wav";
+            audio.play();
+        }
+        
          if(rest <= 0){
              active = false;
          }
